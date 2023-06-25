@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [task, setTask] = useState('');
@@ -23,7 +24,9 @@ function App() {
         <label>
           To Do: <input onChange={handleTask} value={task} />
         </label>
-        <button onClick={addTask}>Add</button>
+        <button disabled={!task} onClick={addTask}>
+          Add
+        </button>
       </form>
       <p>useState: {task}</p>
       <ol>
